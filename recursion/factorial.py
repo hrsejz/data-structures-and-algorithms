@@ -4,12 +4,9 @@ def factorial_with_process(n):
     if n == 0:
         return 1, "1"  # 0! = 1 and the process is simply "1"
     else:
-        # Recursive call: Get the factorial and process for n-1
-        sub_result, process = factorial_with_process(n - 1)
-        # Append the current number (n) to the process string, following the format "n.process"
-        current_process = f"{n}.{process}"  
-        # Return the result of the multiplication (n * sub_result) and the updated process string
-        return n * sub_result, current_process
+        sub_result, process = factorial_with_process(n - 1) # Recursive call: Get the factorial and process for n-1
+        current_process = f"{n}.{process}" # Append the current number (n) to the process string, following the format "n.process"
+        return n * sub_result, current_process # Return the result of the multiplication (n * sub_result) and the updated process string
 
 n = int(input("Enter number to get factorial: ")) 
 
